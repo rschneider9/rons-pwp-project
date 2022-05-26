@@ -2,56 +2,37 @@
 /*body background color*/
 body {
     background: #6c818c;
-
-
-
-
 }
+
+
 /*Heading/main starting bg-image*/
 .main-image {
     background: url("background.jpg");
     background-size: cover;
     height: 70vh;
-    display: flex !important;
+    display: flex;
     justify-content: center;
-    -webkit-text-stroke: 1px white;
+    -webkit-text-stroke: 1px #0d173d;
 }
-@media only screen and (max-device-width: 850px) and (orientation: landscape)  { .title
-
-}
-
+/*title*/
 .title {
-}
-@media (min-width:300px) {
-    .title {
-        font-size: 29px;
-    }
-}
-@media (min-width:576px) {
-    .title {
-        font-size: 29px;
-    }
-}
-@media (min-width:768px) {
-    .title {
-        font-size: 35px;
-    }
-}
-@media (min-width:992px) {
-    .title {
-        font-size: 40px;
-    }
-}
-.title {
-
     font-family:'Kalam', serif;
     text-align: center;
     margin-top: 2rem;
 }
+
 .align-self-center {
     display: inline-flex;
 }
-/*nav-bar name on top right*/
+/*nav-bar */
+.navbg {
+    background-color: #d5ceba;
+    border: 3px solid #9f9494;
+}
+.align-self-center {
+    display: inline-flex;
+}
+
 .aa {
     text-align: center;
     font-size: 1vmin;
@@ -62,64 +43,113 @@ img[alt="Alisha's MugShot"] {
     width: 75%;
     margin: 30px;
 }
-
-
-.carousel{
-    margin: 0 auto;
-    width: 50%;
-    margin-bottom: 50px;
+p {
+    font-size:20px;
 }
+.bio.container.mt-5.rounded > h1{
+    padding: 15px;
+    text-align: center;
+}
+
+/*Bio picture*/
+.rounded-circle {
+    flex-shrink: 0;
+    margin: 20px;
+    height: calc(280px + 6vw);
+    width: calc(100px + 6vw);
+    border: calc(8px + 0.2vw) solid transparent;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    background-size: cover;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px 5px rgba(64, 89, 115, 0.5);
+}
+
+
+/*on the go*/
+img[alt='pink'] {
+    flex-shrink: 0;
+    margin: 20px;
+    height: calc(380px + 10vw);
+    width: calc(250px + 4vw);
+    border: calc(3px + 0.2vw) solid transparent;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    background-size: cover;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px 10px rgb(115, 115, 115);
+}
+
+.service {
+    margin-top: 50px;
+    padding-top: 25px;
+    margin-bottom: 50px;
+    /*using important to get better color than a bootstrap color*/
+    background-color: #bedbe7;
+    font-family:'Kalam', serif;
+}
+.styles {
+    margin-top: 50px;
+    /*using important to get better color than a bootstrap color*/
+    background-color: #a5cde1;
+    font-family:'Kalam', serif;
+    padding: 40px;
+    font-size: 20px ;
+}
+
 .styles1 {
     margin-top: 15px;
 }
 
-.styles {
-    margin-top: 50px;
-    background-color: #a5cde1; !important;
-}
+/*form*/
 .bio {
     margin-top: 50px;
-    background-color: #d5ceba; !important;
+    /*using important to get better color than a bootstrap color*/
+    background-color: #d5ceba;
+    font-family:'Kalam', serif;
 }
-.service {
+
+.form {
     margin-top: 50px;
-    margin-bottom: 50px;
-    background-color: #bedbe7; !important;
-}
-img[alt='mjs"'] {
-    width: 60%;
+    background-color: #eedf98;
+    font-family:'Kalam', serif;
 }
 
-.features {
-    margin-top: 50px
+/*Alisha's styles and specialty's*/
+img[alt='color2'] {
+    flex-shrink: 0;
+    margin: 20px;
+    height: calc(330px + 8vw);
+    width: calc(270px + 6vw);
+    border: calc(3px + 0.2vw) solid transparent;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    background-size: cover;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px 10px rgb(115, 115, 115);
 }
-
-
+.li {
+    font-size: 20px;
+}
 .services {
     margin-top: 50px;
     margin-bottom: 50px;
+    font-family:'Kalam', serif;
+    font-size: xx-large;
 }
+
 .h2, h2 {
     text-align: center;
-    font-size: xxx-large;
-}
-img[alt='pink']{
-    width: 70%;
-}
-img[alt='color2'] {
-    width: 70%;
+    font-size:40px;
 }
 
-/*on the go*/
-.togo {
-
-}
 /*Pricing*/
 .pricing {
-    font-size: 18px;
+    font-size: 20px;
 }
 
-ul {
-    font-size: xx-large;
-    font-size: large;
+/*carousel*/
+.carousel{
+    margin: 0 auto;
+    width: 50%;
 }

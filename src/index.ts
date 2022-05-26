@@ -14,7 +14,7 @@ require('dotenv').config()
 const validation = [
     check('name', 'A valid name is required.').not().isEmpty().trim().escape(),
     check('lastname', 'Please provide a valid last name').not().isEmpty().trim().escape(),
-    check('email', 'Please provide a valid Email.').isEmail,
+    check('email', 'Please provide a valid Email.').isEmail(),
     check('phoneNumber', 'Please provide a valid phone number').trim().escape(),
     check('comment', 'A message of up to 2000 characters is required.').trim().escape().isLength({min: 1, max:2000})
 
@@ -34,11 +34,11 @@ const handleGetRequest = (request: Request, response: Response) => {
 }
 
 const handlePostRequest = (request: Request, response: Response) => {
-    console.log('line36')
+
 
     response.append('Content-Type', 'text/html')
     response.append('Access-Control-Allow-Origin', '*')
-    return response.send('<div>It worked</div>')
+
     // @ts-ignore
     if(request.recaptcha.error) {
         return response.send(
@@ -58,7 +58,7 @@ const handlePostRequest = (request: Request, response: Response) => {
 
     const mailgunData ={
         to: process.env.MAIL_RECIPIENT,
-        from: `${name}: ${lastName} <postmaster@${process.env.MAILGUN_DOMAIN}`,
+        from: `${name} ${lastName} <postmaster@${process.env.MAILGUN_DOMAIN}>`,
         subject: `${email}: ${phoneNumber}`,
         text: comment
     }
@@ -69,9 +69,15 @@ const handlePostRequest = (request: Request, response: Response) => {
                 `<div class='alert alert-success' role='alert'>Email Successfully Sent</div>`
             ))
         .catch((error: any) =>
-            response.send(
+
+        { console.log(error)
+            return  response.send(
                 `<div class='alert alert-danger' role='alert'><strong>Oh Snap3!</strong> Email Failed. Please Try Again.</div>`
-            ))
+
+
+            )}
+        )
+
 
 }
 
@@ -79,7 +85,7 @@ const indexRoute = express.Router()
 
 indexRoute.route('/')
     .get(handleGetRequest)
-    .post(recaptcha.middleware.verify, validation, handleGetRequest)
+    .post(recaptcha.middleware.verify, validation, handlePostRequest)
 
 app.use('/apis', indexRoute)
 
